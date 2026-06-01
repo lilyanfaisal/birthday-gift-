@@ -1,0 +1,120 @@
+<html>
+<head>
+<title>Happy Birthday</title>
+
+<style>
+button {
+font-size: 20px;
+padding: 10px 25px;
+cursor: pointer;
+}
+
+</style>
+</head>
+<body>
+<div id="welcome">
+<h1 style="font-size:45px;">Happy Birthday🩷</h1>
+<p style="font-size:22px;">
+A Special Gift For You ^_^
+</p>
+<button onclick="startGift()">
+open
+</button>
+</div>
+
+<div id="gift"></div>
+
+<script type="text/javascript">
+let started = false;
+//after clicking
+function startGift()
+{
+if (started) return;
+started = true;
+document.getElementById("welcome").style.display = "none";
+var gift = document.getElementById("gift");
+let count = 3;
+gift.innerHTML = "<div style='height:60vh; display:flex; justify-content:center; align-items:center; font-size:80px;'>" + count + "</div>";
+let timer = setInterval(function()
+ {
+count--;
+
+if (count > 0)
+{
+gift.innerHTML = "<div style='height:60vh; display:flex; justify-content:center; align-items:center; font-size:80px;'>" + count + "</div>";
+}
+
+else
+{
+clearInterval(timer);
+showLetter();
+}
+}, 1000);
+}
+
+// LETTER
+function showLetter()
+{
+var text = "";
+text += "<div style='font-size:22px; line-height:1.8;'>";
+text += "<h2 style='font-size:40px;'>HAPPY BIRTHDAY 🎂</h2><br>";
+text += "Thank you for always being there for me and listening to me, i really appreciate everything you've done including the small things that you probably don't realize matter so much. i am really grateful to have a friend like you.<br><br>";
+
+text += "Also I am proud of you for how hard you are studying and trying your best, i know it is not easy but i truly believe in you and you are doing a really good job.<br><br>";
+
+text += "I hope you achieve the grade you want and reach all your goals for this year and your college year, keep studying hard and never give up even when it feels difficult; i am sure you are capable of doing it. i will always be there for you and cheering for you.<br><br>";
+
+text += "</div>";
+text += "<button onclick='showMessage()' style='font-size:20px; padding:10px 20px;'>Next ➜</button>";
+document.getElementById("gift").innerHTML = text;
+}
+
+// MESSAGE
+function showMessage()
+{
+var age = 17;
+var text = "<h2 style='font-size:38px;'>Birthday Message 🎉</h2>";
+if(age < 18)
+{
+text += "<p style='font-size:22px;'>enjoy your birthday and keep beleiving in yourself💞</p><br>";
+}
+
+else if(age == 18)
+{
+text += "<p style='font-size:22px;'>Welcome to adulthood! 🎉</p><br>";
+}
+
+else
+{
+text += "<p style='font-size:22px;'>Have an amazing year ahead!</p><br>";
+}
+text += "<button onclick='showCake()' style='font-size:20px; padding:10px 20px;'>🎂 Open your Cake 🎂</button>";
+document.getElementById("gift").innerHTML = text;
+}
+
+
+//THE CAKE
+function showCake()
+{
+var text = "";
+text += "<h1 style='font-size:55px;'>🎂 HAPPY BIRTHDAY 🎂</h1>";
+text += "<pre style='font-size:18px;'>";
+text += "       🕯️\n";
+text += "        |\n";
+text += "     ___|___\n";
+text += "     |     |\n";
+text += "    _|_____|_\n";
+text += "    |       |\n";
+text += "  __|_______|__\n";
+text += " |             |\n";
+text += " |    sweet    |\n";
+text += " |     18      |\n";
+text += " |_____________|\n";
+text += "</pre>";
+text += "<h2 style='font-size:35px;'>❤️ love you ❤️</h2>";
+document.getElementById("gift").innerHTML = text;
+}
+
+</script>
+</body>
+</html>
